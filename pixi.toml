@@ -1,0 +1,80 @@
+[workspace]
+channels = ["conda-forge", "bioconda", "https://conda.anaconda.org/hcc"]
+name = "lorphaV1"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+find_identical = { cmd = "python3 find_identical.py", cwd = "software/scripts" }
+"merge.phabox_genomad_vhost_contamination" = { cmd = "python3 merge.phabox_genomad_vhost_contamination.py", cwd = "software/scripts" }
+filter_script = { cmd = "python3 filter_script.py", cwd = "software/scripts" }
+"merge.virus_profile.checkv.votu" = { cmd = "python3 merge.virus_profile.checkv.votu.py", cwd = "software/scripts" }
+PhaStyle = { cmd = "python3 PhaStyle.py", cwd = "software/PhaStyle/bin/" }
+"merge.votu_profile.phastyle" = { cmd = "python3 merge.votu_profile.phastyle.py", cwd = "software/scripts" }
+"filter.votu_meta" = { cmd = "python3 filter.votu_meta.py", cwd = "software/scripts" }
+bacteria_merger_multi = { cmd = "python3 bacteria_merger_multi.py", cwd = "software/scripts" }
+votu_merger_multi = { cmd = "python3 votu_merger_multi.py", cwd = "software/scripts" }
+"merge.defensefinder_tax" = { cmd = "python3 merge.defensefinder_tax.py", cwd = "software/scripts" }
+"merge.tax_coverm" = { cmd = "python3 merge.tax_coverm.py", cwd = "software/scripts" }
+lorpha_setup = { cmd = "python3 lorpha_setup.py ", cwd = "software/scripts" }
+
+[dependencies]
+seqkit = ">=2.12.0,<3"
+python = "3.12.*"
+prokbert = ">=0.0.48,<0.0.49"
+transformers = ">=4.43.4,<5"
+datasets = ">=4.0.0,<5"
+lexicmap = ">=0.8.0,<0.9"
+mmseqs2 = ">=16.747c6,<19"
+vclust = ">=1.3.1,<2"
+coverm = ">=0.7.0,<0.8"
+checkv = ">=1.0.3,<2"
+prodigal = ">=2.6.3,<3"
+biopython = ">=1.86,<2"
+pandas = ">=2.3.3,<3"
+numpy = ">=1.26.4,<3"
+matplotlib = ">=3.9.1,<4"
+hmmer = ">=3.4,<4"
+seqtk = ">=1.4,<2"
+diamond = ">=0.9.14,<3"
+mafft = ">=7.526,<8"
+trimal = ">=1.5.1,<2"
+iqtree = ">=3.0.1,<4"
+
+[feature.phabox.dependencies]
+phabox = "2.1.13.*"
+
+[feature.genomad.dependencies]
+genomad = "*"
+
+[feature.vibrant.dependencies]
+python = "3.6.*"
+seaborn = "0.9.0.*"
+numpy = "==1.17.0"
+scikit-learn = "0.21.3.*"
+vibrant = "1.2.0.*"
+
+[feature.defensefinder.dependencies]
+hmmer = "==3.3.2"
+macsyfinder = "==2.1.4"
+colorlog = ">=6.10.1,<7"
+pyyaml = ">=6.0.3,<7"
+packaging = ">=25.0,<26"
+networkx = ">=3.6,<4"
+defense-finder = "==2.0.1"
+python = "3.12.12.*"
+pyhmmer = "0.11.*"
+
+[feature.dbcan3.dependencies]
+diamond = "*"
+dbcan = ">=5.2.8,<6"
+
+
+[environments]
+phabox = ["phabox"]
+genomad = ["genomad"]
+vibrant = { features = ["vibrant"], no-default-feature = true }
+defensefinder = { features = ["defensefinder"], no-default-feature = true }
+dbcan3 = { features = ["dbcan3"], no-default-feature = true }
+
+

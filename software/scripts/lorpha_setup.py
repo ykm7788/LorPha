@@ -107,7 +107,7 @@ mkdir -p {args.o}/analysis_contig/coverm
     job4_coverm = "\n#### calculate abundances ####\n"
     job4 = job4_coverm + job4_covermContig.to_string(index=False, header=False) + "\n" + job4_ContigID.to_string(index=False, header=False) + "\n" + job4_bacteria_merger + "\n" + job4_covermVotu.to_string(index=False, header=False) + "\n" + job4_votu_merger + "\n\n"
 
-    job5_dbcan1 = f"pixi run --environment dbcan3 run_dbcan easy_substrate --db_dir {args.d}/dbcan_V14 --output_dir {args.o}/analysis_votu/dbcan --mode meta --input_raw_data {args.o}/analysis_votu/votu.fa --threads {args.t} {parameter.iloc[5,1]} ; "
+    job5_dbcan1 = f"pixi run --environment dbcan3 run_dbcan easy_substrate --db_dir {args.d}/dbcan --output_dir {args.o}/analysis_votu/dbcan --mode meta --input_raw_data {args.o}/analysis_votu/votu.fa --threads {args.t} {parameter.iloc[5,1]} ; "
     job5_dbcan2 = f"cp {args.o}/analysis_votu/dbcan/overview.tsv {args.o}/LorPha_results/GeneFunction/dbcan.txt ; "
     job5_PhaStyle1 = f"pixi run PhaStyle --fastain {args.o}/analysis_votu/votu.fa --out {args.o}/analysis_votu/PhaStyle/PhaStyle.txt --ftmodel {args.d}/PhaStyle --num-cores {args.t} ; "
     job5_PhaStyle2 = f"pixi run merge.votu_profile.phastyle -v {args.o}/analysis_votu/votu.profile.txt -p {args.o}/analysis_votu/PhaStyle/PhaStyle.txt -o {args.o}/LorPha_results ;"

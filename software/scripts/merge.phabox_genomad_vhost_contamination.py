@@ -81,7 +81,7 @@ def process_file1(file_path):
 
     # Get the relevant columns first (for easier subsequent filtering)
     # These correspond to the original 1st, 6th, 7th, 11th, 16th, 17th columns
-    temp_df = df.loc[pred_is_virus_mask, df.columns[[0, 5, 6, 10, 15, 16]]].copy()
+    temp_df = df.loc[pred_is_virus_mask, df.columns[[0, 5, 6, 11, 16, 17]]].copy()
     temp_df.columns = [
         'ContigID', 'PhaMerConfidence', 'VirusTax_phabox',
         'VirusLife_phabox', 'HostTax_phaboxNCBI', 'HostTax_phaboxGTDB'

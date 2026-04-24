@@ -1,0 +1,10 @@
+Software	Parameter
+phabox	--len 1500
+genomad	--lenient-taxonomy --full-ictv-lineage
+lexicmap	--align-min-match-pident 80 --min-qcov-per-hsp 0 --min-qcov-per-genome 50 --align-min-match-len 1500 --top-n-genomes 1 
+vclust prefilter	--min-ident 0.95
+vclust cluster	--algorithm cd-hit --metric ani --ani 0.95 --qcov 0.85 --out-repr
+dbcan	 --e_value_threshold 0.00001 --evalue_cutoff 0.00001
+mmseqs easy-cluster	--min-seq-id 0.8 -c 0.8 --cov-mode 5 --remove-tmp-files 1 --write-lookup 1
+mmseqs taxonomy	--tax-lineage 1 -e 0.00001 
+coverm	--min-read-aligned-percent 50 --min-read-percent-identity 90 --min-covered-fraction 0 --contig-end-exclusion 0 -m rpkm count reads_per_base

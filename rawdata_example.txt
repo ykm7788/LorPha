@@ -1,0 +1,7 @@
+SampleID	Contig	Cleandata_R1	Cleandata_R2
+sample1	/path/sample1.contig.fa	/path/sample1_R1.fq.gz	/path/sample1_R2.fq.gz
+sample2	/path/sample2.contig.fa	/path/sample2_R1.fq.gz	/path/sample2_R2.fq.gz
+sample3	/path/sample3.contig.fa	/path/sample3_R1.fq.gz	/path/sample3_R2.fq.gz
+sample4	/path/sample4.contig.fa	/path/sample4_R1.fq.gz	/path/sample4_R2.fq.gz
+sample5	/path/sample5.contig.fa	/path/sample5_R1.fq.gz	/path/sample5_R2.fq.gz
+sample6	/path/sample6.contig.fa	/path/sample6_R1.fq.gz	/path/sample6_R2.fq.gz

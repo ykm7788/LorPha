@@ -102,7 +102,7 @@ cd /path/LorPha
 #### 3.2 Setup LorPha jobs
 
 ```bash 
- pixi run lorpha_setup -r /AbsolutePath/rawdata.txt -p /AbsolutePath/parameter.txt -t 8 -d /AbsolutePath/database -o /path/result
+ pixi run lorpha_setup -r /AbsolutePath/rawdata.txt -p /AbsolutePath/parameter.txt -t core_num -d /AbsolutePath/database -o /path/result
 ```
 
 

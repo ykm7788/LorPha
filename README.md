@@ -8,7 +8,7 @@ LorPha is a pixi based one-stop phageome analysis pipeline designed for biologis
 
 #### 1.1 Install pixi
 
-As LorPhais developed based on pixi, please refer to pixi to first make sure pixi is installed.&#x20;
+As LorPha is developed based on pixi, please refer to pixi to first make sure pixi is installed.&#x20;
 
 [https://pixi.prefix.dev/](https://pixi.prefix.dev/ "https://pixi.prefix.dev/")
 

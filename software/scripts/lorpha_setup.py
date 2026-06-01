@@ -98,10 +98,10 @@ mkdir -p {args.o}/analysis_contig/coverm
     job3_mmseq = "\n#### extract prokaryotes ####\n"
     job3 = job3_mmseq + job3_cluster.to_string(index=False, header=False) + "\n" + job3_createdb.to_string(index=False, header=False) + "\n" + job3_taxonomy.to_string(index=False, header=False) + "\n" + job3_createtsv.to_string(index=False, header=False) + "\n" + job3_rep.to_string(index=False, header=False) + "\n" + job3_taxid.to_string(index=False, header=False) + "\n" + job3_repfa.to_string(index=False, header=False) + "\n\n"
 
-    job4_covermContig = f"pixi run coverm contig --coupled {rawdata['Cleandata_R1']} {rawdata['Cleandata_R2']} --reference {rawdata['Contig']} {parameter.iloc[8,1]} -o {args.o}/analysis_contig/coverm/{rawdata['SampleID']}.coverm.txt --no-zeros -t {args.t} ; "
+    job4_covermContig = f"pixi run coverm contig --coupled {rawdata['Reads_R1']} {rawdata['Reads_R2']} --reference {rawdata['Contig']} {parameter.iloc[8,1]} -o {args.o}/analysis_contig/coverm/{rawdata['SampleID']}.coverm.txt --no-zeros -t {args.t} ; "
     job4_ContigID = f"pixi run merge.tax_coverm -t {args.o}/analysis_contig/mmseq/tax_rep/{rawdata['SampleID']}.rep.tax.txt -c {args.o}/analysis_contig/coverm/{rawdata['SampleID']}.coverm.txt -o {args.o}/analysis_contig/mmseq/tax_coverm/{rawdata['SampleID']}.tax.coverm.txt ; "
     job4_bacteria_merger = f"pixi run bacteria_merger_multi -d {args.o}/analysis_contig/mmseq/tax_coverm/ -o {args.o}/LorPha_results/Coverm ; "
-    job4_covermVotu = f"pixi run coverm contig --coupled {rawdata['Cleandata_R1']} {rawdata['Cleandata_R2']} --reference {args.o}/analysis_votu/votu.fa {parameter.iloc[8,1]} -o {args.o}/analysis_votu/coverm/{rawdata['SampleID']}.votu.coverm.txt --no-zeros -t {args.t} ; "
+    job4_covermVotu = f"pixi run coverm contig --coupled {rawdata['Reads_R1']} {rawdata['Reads_R2']} --reference {args.o}/analysis_votu/votu.fa {parameter.iloc[8,1]} -o {args.o}/analysis_votu/coverm/{rawdata['SampleID']}.votu.coverm.txt --no-zeros -t {args.t} ; "
     job4_votu_merger = f"pixi run votu_merger_multi -d {args.o}/analysis_votu/coverm/ -o {args.o}/LorPha_results/Coverm ; "
 
     job4_coverm = "\n#### calculate abundances ####\n"

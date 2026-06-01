@@ -60,7 +60,7 @@ Alternatively, Users can manually download these databases from official sources
 
 Before runing LorPha, users need to manually edit a sample file containing the path to sample data. The sample file is a tab-separated file with four columns. Each row represents one sample that you want to analysize. All samples in this file will be parallelly processed and their results will be merged together. Please do not modify the column name of sample file. The `sample.txt` file should like this:
 
-| SampleID | Contig                  | Cleandata\\\_R1           | Cleandata\\\_R2           |
+| SampleID | Contig                  | Reads\\\_R1           | Reads\\\_R2           |
 | -------- | ----------------------- | ------------------------- | ------------------------- |
 | sample1  | /path/sample1.contig.fa | /path/sample1\\\_R1.fq.gz | /path/sample1\\\_R2.fq.gz |
 | sample2  | /path/sample2.contig.fa | /path/sample2\\\_R1.fq.gz | /path/sample2\\\_R2.fq.gz |

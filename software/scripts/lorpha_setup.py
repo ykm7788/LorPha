@@ -116,7 +116,7 @@ mkdir -p {args.o}/analysis_contig/coverm
     job5_vibrant2 = f"cp {args.o}/analysis_votu/VIBRANT/VIBRANT_votu/VIBRANT_results_votu/VIBRANT_annotations_votu.tsv {args.o}/LorPha_results/GeneFunction/VIBRANT_annotation.txt ; "
     job5_vibrant3 = f"cp {args.o}/analysis_votu/VIBRANT/VIBRANT_votu/VIBRANT_results_votu/VIBRANT_AMG_individuals_votu.tsv {args.o}/LorPha_results/GeneFunction/VIBRANT_potentialAMG.txt ; "
     job5_defensefinder1 = f"pixi run --environment defensefinder defense-finder run {args.o}/analysis_contig/mmseq/rep/{rawdata['SampleID']}.cluster.fa -o {args.o}/analysis_contig/defensefinder --models-dir {args.d}/defensefinder/ -w {args.t} ; "
-    job5_defensefinder2 = f"pixi run merge.defensefinder_tax -d {args.o}/analysis_contig/defensefinder -t {args.o}/analysis_contig/mmseq/tax_out/ -o {args.o}/LorPha_results/GeneFunction ; "
+    job5_defensefinder2 = f"pixi run merge.defensefinder_tax -d {args.o}/analysis_contig/defensefinder -t {args.o}/analysis_contig/mmseq/tax_out/ -o {args.o}/LorPha_results/GeneFunction   --skip-model-version-check ; "
 
     job5_function = "\n#### PhaStyle & gene functions ####\n"
     job5 = job5_function + job5_dbcan1 + "\n" + job5_dbcan2 + "\n" + job5_PhaStyle1 + "\n" + job5_PhaStyle2 + "\n" + job5_PhaStyle3 + "\n" + job5_vibrant1 + "\n" + job5_vibrant2 + "\n" + job5_vibrant3 + "\n" + job5_defensefinder1.to_string(index=False, header=False) + "\n" + job5_defensefinder2 + "\n\n"

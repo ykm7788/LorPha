@@ -17,6 +17,7 @@ votu_merger_multi = { cmd = "python3 votu_merger_multi.py", cwd = "software/scri
 "merge.defensefinder_tax" = { cmd = "python3 merge.defensefinder_tax.py", cwd = "software/scripts" }
 "merge.tax_coverm" = { cmd = "python3 merge.tax_coverm.py", cwd = "software/scripts" }
 lorpha_setup = { cmd = "python3 lorpha_setup.py ", cwd = "software/scripts" }
+merge_votu_taxa = { cmd = "python3 merge.vhdb.py ", cwd = "software/scripts" }
 
 [dependencies]
 seqkit = ">=2.12.0,<3"
